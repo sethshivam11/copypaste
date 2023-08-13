@@ -49,28 +49,28 @@ export default function TextForm(props) {
             onChange={handleOnChange}
           ></textarea>
         </div>
-        <button className="btn btn-primary" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>
           Convert to UPPERCASE
         </button>
-        <button className="btn btn-success mx-2" onClick={handleLowClick}>
+        <button className="btn btn-success mx-2 my-1" onClick={handleLowClick}>
           Convert to lowercase
         </button>
-        <button className="btn btn-warning" onClick={handleClearClick}>
+        <button className="btn btn-warning mx-2 my-1" onClick={handleClearClick}>
           Clear Text
         </button>
-        <button className="btn btn-info mx-2" onClick={handleCopyText}>
+        <button className="btn btn-info mx-2 my-1" onClick={handleCopyText}>
           Copy Text
         </button>
-        <button className="btn btn-dark mx-2" onClick={handleExtraSpaces}>
+        <button className="btn btn-dark mx-2 my-1" onClick={handleExtraSpaces}>
           Remove Extra Spaces
         </button>
       </div>
       <div className="container my-2">
-        <h3>Your Text Summary</h3>
-        <p className="my-1">
+        <h3 className="mx-3 mt-4">Your Text Summary</h3>
+        <p className="my-1 mx-4">
           {text.split(" ").length} words and {text.length} characters
         </p>
-        <p className="my-1">
+        <p className="my-1 mx-4">
           {0.008 * text.split(" ").length} Minutes to read.
         </p>
       </div>
