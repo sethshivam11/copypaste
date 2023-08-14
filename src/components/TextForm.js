@@ -22,8 +22,8 @@ export default function TextForm(props) {
     props.showAlert("Text cleared.", "Success, ");
   };
   const handleCopyText = () => {
-    try{let copyText = text.value;
-    navigator.clipboard.writeText(copyText);
+    try{let copyText = document.querySelector("#myBox");
+    navigator.clipboard.writeText(copyText.value);
     props.showAlert("Text Copied to Clipboard.", "Success, ");
   }
     catch(err){
@@ -39,7 +39,7 @@ export default function TextForm(props) {
   return (
     <>
       <div className="container">
-        <h3 className="my-4">{props.heading}</h3>
+        <h3 className="mb-4">{props.heading}</h3>
         <div className="mb-3">
           <textarea
             className="form-control"
@@ -55,7 +55,10 @@ export default function TextForm(props) {
         <button className="btn btn-success mx-2 my-1" onClick={handleLowClick}>
           Convert to lowercase
         </button>
-        <button className="btn btn-warning mx-2 my-1" onClick={handleClearClick}>
+        <button
+          className="btn btn-warning mx-2 my-1"
+          onClick={handleClearClick}
+        >
           Clear Text
         </button>
         <button className="btn btn-info mx-2 my-1" onClick={handleCopyText}>
@@ -68,10 +71,19 @@ export default function TextForm(props) {
       <div className="container my-2">
         <h3 className="mx-3 mt-4">Your Text Summary</h3>
         <p className="my-1 mx-4">
-          {text.split(" ").length} words and {text.length} characters
+          {
+            text.split(" ").filter((ele) => {
+              return ele.length !== 0;
+            }).length
+          }{" "}
+          words and {text.length} characters
         </p>
         <p className="my-1 mx-4">
-          {0.008 * text.split(" ").length} Minutes to read.
+          {0.008 *
+            text.split(" ").filter((ele) => {
+              return ele.length !== 0;
+            }).length}{" "}
+          Minutes to read.
         </p>
       </div>
     </>

@@ -2,7 +2,8 @@ import React from 'react'
 
 export default function Alert(props) {
   return (
-    props.alert && (
+    <div style={{height: '65px'}}>
+    {props.alert && 
       <div>
         <div
           className="alert alert-success alert-dismissible fade show"
@@ -17,7 +18,7 @@ export default function Alert(props) {
             aria-label="Close"
           ></button>
         </div>
+      </div>}
       </div>
     )
-  );
 }

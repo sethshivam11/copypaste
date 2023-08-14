@@ -13,12 +13,12 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#212529";
       document.body.style.color = "white";
-      showAlert("Light Mode has been enabled.", "Success, ");
+      showAlert("Dark Mode has been enabled.", "Success, ");
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
-      showAlert("Dark Mode has been enabled.", "Success, ");
+      showAlert("Light Mode has been enabled.", "Success, ");
     }
   };
   const [alert, setAlert] = useState(null);
@@ -58,32 +58,41 @@ function App() {
 
   return (
     <div>
-        <Navbar
-          title="Text Utils"
-          li2="About Us"
-          mode={mode}
-          toggleMode={toggleMode}
-          greenColor={greenColor}
-          blueColor={blueColor}
-          redColor={redColor}
-          blackColor={blackColor}
-        />
-        <Alert alert={alert} />
-        <div className="container">
-          <Routes>
-            <Route
-              exact path="/"
-              element={
-                <TextForm
-                  heading="Enter your text below"
-                  showAlert={showAlert}
-                />
-              }
-            />
-            <Route exact path="/about" element={<About mode={mode}/>} />
-            <Route path="*" element={<TextForm heading="Enter your text below" showAlert={showAlert}/>}/>
-          </Routes>
-        </div>
+      <Navbar
+        title="Text Utils"
+        li2="About Us"
+        mode={mode}
+        toggleMode={toggleMode}
+        greenColor={greenColor}
+        blueColor={blueColor}
+        redColor={redColor}
+        blackColor={blackColor}
+      />
+      <Alert alert={alert} />
+      <div className="container">
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <TextForm
+                heading="Try Text Utils | Word Counter | Character Counter"
+                showAlert={showAlert}
+              />
+            }
+          />
+          <Route exact path="/about" element={<About mode={mode} />} />
+          <Route
+            path="*"
+            element={
+              <TextForm
+                heading="Try Text Utils | Word Counter | Character Counter"
+                showAlert={showAlert}
+              />
+            }
+          />
+        </Routes>
+      </div>
     </div>
   );
 }
