@@ -13,9 +13,11 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#212529";
       document.body.style.color = "white";
+      // document.getElementById("colorPallete").style.visibility = "visible";
       showAlert("Dark Mode has been enabled.", "Success, ");
     } else {
       setMode("light");
+      // document.getElementById("colorPallete").style.visibility = "hidden";
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
       showAlert("Light Mode has been enabled.", "Success, ");
@@ -36,10 +38,19 @@ function App() {
       document.body.style.backgroundColor = "#850f02";
       showAlert("Color changed to Red.", "Success, ");
     }
+    else{
+      document.body.style.backgroundColor = "#e50101";
+      document.body.style.color = "white";
+      showAlert("Color changed to Red.", "Success, ");
+    }
   };
   const greenColor = () => {
     if (mode === "dark") {
       document.body.style.backgroundColor = "#124012";
+      showAlert("Color changed to Green.", "Success, ");
+    } else {
+      document.body.style.backgroundColor = "#0c950c";
+      document.body.style.color = "white";
       showAlert("Color changed to Green.", "Success, ");
     }
   };
@@ -47,12 +58,20 @@ function App() {
     if (mode === "dark") {
       document.body.style.backgroundColor = "#0b2447";
       showAlert("Color changed to Blue.", "Success, ");
+    } else {
+      document.body.style.backgroundColor = "#0c55ba";
+      document.body.style.color = "white";
+      showAlert("Color changed to Blue.", "Success, ");
     }
   };
   const blackColor = () => {
     if (mode === "dark") {
-      document.body.style.backgroundColor = "#000000";
-      showAlert("Color changed to Black.", "Success, ");
+      document.body.style.backgroundColor = "#F6BE00";
+      showAlert("Color changed to Yellow.", "Success, ");
+    } else {
+      document.body.style.backgroundColor = "yellow";
+      document.body.style.color = "black";
+      showAlert("Color changed to Yellow.", "Success, ");
     }
   };
 

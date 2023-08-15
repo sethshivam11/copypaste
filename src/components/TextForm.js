@@ -72,7 +72,7 @@ export default function TextForm(props) {
         <h3 className="mx-3 mt-4">Your Text Summary</h3>
         <p className="my-1 mx-4">
           {
-            text.split(" ").filter((ele) => {
+            text.split(/\s+/).filter((ele) => {
               return ele.length !== 0;
             }).length
           }{" "}
@@ -80,7 +80,7 @@ export default function TextForm(props) {
         </p>
         <p className="my-1 mx-4">
           {0.008 *
-            text.split(" ").filter((ele) => {
+            text.split(/\s+/).filter((ele) => {
               return ele.length !== 0;
             }).length}{" "}
           Minutes to read.

@@ -6,9 +6,15 @@ export default function Navbar(props) {
     <nav
       className="navbar navbar-expand-lg bg-body-tertiary"
       data-bs-theme={props.mode}
+      id="navbar"
     >
       <div className="container-fluid">
-        <img src="favicon.svg" alt="" style={{width: "30px", height: "30px"}} className="mx-2"/>
+        <img
+          src="favicon.svg"
+          alt=""
+          style={{ width: "30px", height: "30px" }}
+          className="mx-2"
+        />
         <Link className="navbar-brand" to="/">
           {props.title}
         </Link>
@@ -36,12 +42,7 @@ export default function Navbar(props) {
               </Link>
             </li>
           </ul>
-          <div id="colorPallete">
-            <button id="red" onClick={props.redColor}></button>
-            <button id="green" onClick={props.greenColor}></button>
-            <button id="blue" onClick={props.blueColor}></button>
-            <button id="black" onClick={props.blackColor}></button>
-          </div>
+
           <div className="form-check form-switch">
             <input
               className="form-check-input"
@@ -58,8 +59,14 @@ export default function Navbar(props) {
               }
               htmlFor="flexSwitchCheckDefault"
             >
-              Dark Mode
+              Dark
             </label>
+          </div>
+          <div id="colorPallete">
+            <button id="red" onClick={props.redColor}></button>
+            <button id="green" onClick={props.greenColor}></button>
+            <button id="blue" onClick={props.blueColor}></button>
+            <button id="black" onClick={props.blackColor}></button>
           </div>
         </div>
       </div>
