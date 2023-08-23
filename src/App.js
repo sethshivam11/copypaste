@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
@@ -8,16 +8,35 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+  const prefersNotSet = window.matchMedia("(prefers-color-scheme: no-preference)").matches;
+  useLayoutEffect(() => {
+    if (prefersDark) {
+      setMode("dark");
+      document.body.style.backgroundColor = "#212529";
+      document.body.style.color = "white";
+    }
+    if (prefersLight) {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "black";
+    }
+    if (prefersNotSet) {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "black";
+    }
+    // eslint-disable-next-line
+  }, []);
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#212529";
       document.body.style.color = "white";
-      // document.getElementById("colorPallete").style.visibility = "visible";
       showAlert("Dark Mode has been enabled.", "Success, ");
     } else {
       setMode("light");
-      // document.getElementById("colorPallete").style.visibility = "hidden";
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
       showAlert("Light Mode has been enabled.", "Success, ");
@@ -37,8 +56,7 @@ function App() {
     if (mode === "dark") {
       document.body.style.backgroundColor = "#850f02";
       showAlert("Color changed to Red.", "Success, ");
-    }
-    else{
+    } else {
       document.body.style.backgroundColor = "#e50101";
       document.body.style.color = "white";
       showAlert("Color changed to Red.", "Success, ");
