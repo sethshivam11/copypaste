@@ -50,6 +50,7 @@ export default function Navbar(props) {
               role="switch"
               id="flexSwitchCheckDefault"
               onClick={props.toggleMode}
+              checked={props.mode === 'dark'? "dark": "light"}
             />
             <label
               className={
