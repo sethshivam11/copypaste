@@ -1,0 +1,15 @@
+{
+  "name": "copypaste",
+  "version": "1.0.0",
+  "description": "This is a website where users can perform operations on their entered text.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "shivam",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
