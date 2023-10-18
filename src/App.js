@@ -96,7 +96,7 @@ function App() {
   return (
     <div>
       <Navbar
-        title="Text Utils"
+        title="Copy Paste"
         li2="About Us"
         mode={mode}
         toggleMode={toggleMode}
@@ -113,7 +113,7 @@ function App() {
             path="/"
             element={
               <TextForm
-                heading="Try Text Utils | Word Counter | Character Counter"
+                heading="Try Copy Paste | Word Counter | Character Counter"
                 showAlert={showAlert}
               />
             }
@@ -123,7 +123,7 @@ function App() {
             path="*"
             element={
               <TextForm
-                heading="Try Text Utils | Word Counter | Character Counter"
+                heading="Try Copy Paste | Word Counter | Character Counter"
                 showAlert={showAlert}
               />
             }
