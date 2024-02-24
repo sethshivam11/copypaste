@@ -1,0 +1,55 @@
+#colorPallete{
+    width: 122px;
+    height: 32px;
+    background-color:white;
+    border-radius: 35px;
+    margin: 5px;
+    margin-left: 10px;
+    z-index: 2;
+    /* visibility: hidden; */
+    border: 1px solid #2b3035;
+}
+@media screen and (max-width: 991px) {
+    #colorPallete{
+        margin: 0px;
+        margin-top: 10px;
+
+    }
+}
+:root{
+    --mg: 5px;
+    --hw: 20px;
+}
+#red{
+    background: red;
+    width: var(--hw);
+    height: var(--hw);
+    margin: var(--mg);
+    border-radius: 50%;
+    border: none;
+
+}
+#black{
+    background: yellow;
+    width: var(--hw);
+    height: var(--hw);
+    margin: var(--mg);
+    border-radius: 50%;
+    border: none;
+}
+#blue{
+    background: blue;
+    width: var(--hw);
+    height: var(--hw);
+    margin: var(--mg);
+    border-radius: 50%;
+    border: none;
+}
+#green{
+    background: green;
+    width: var(--hw);
+    height: var(--hw);
+    margin: var(--mg);
+    border-radius: 50%;
+    border: none;
+}
